@@ -1,0 +1,11 @@
+animal: &animal
+  cat: '猫'
+  dog: '犬'
+
+animal_shop_1:
+  <<: *animal
+  hamster: 'ハムスター'
+
+animal_show_2:
+  <<: *animal
+  parrot: 'オウム'
