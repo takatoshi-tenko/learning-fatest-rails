@@ -49,21 +49,19 @@ class Parson
   end
 end
 
-class PricedObject
+module PriceHolder
   def total_price
     price * Tax.rate
   end
-
-  def price
-    raise NotImplementedError
-  end
 end
 
-class Ploduct < PricedObject
+class Ploduct
+  include PriceHolder
   attr_accessor :price
 end
 
-class OrderdItem < PricedObject
+class OrderdItem
+  include PriceHolder
   attr_accessor :unit_price, :volume
 
   def price
@@ -96,7 +94,26 @@ class Task < BaseTask
   end
 end
 
+module Chatting
+  def chat
+    'hello'
+  end
+end
 
+class Dog
+  include Chatting
+end
+
+class User
+  attr_accessor :name
+end
+
+user1 = User.new
+user1.name = '天孝'
+user2 = User.new
+user2.name = '高俊'
+user3 = User.new
+user3.name = 'よろしく子'
 
 
 
