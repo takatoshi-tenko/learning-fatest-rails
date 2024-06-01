@@ -78,3 +78,5 @@ gem 'slim-rails'
 
 gem 'bootstrap', '~> 5.0.0'
 gem 'sass-rails', '>= 6'
+
+gem 'rails_autolink'
